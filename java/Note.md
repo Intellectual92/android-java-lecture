@@ -43,18 +43,22 @@ b = “Variable” // b는 string형태만 와야 한다.
 - 어떤 언어, OS에서도 같은 뜻으로 통한다.
 - 소문자로 시작한다.
 
-(1) 양수 : short / int / Long (자리수 차이)
-(2) 음수 : float / double (자리수 차이)
-(3) 참/거짓 : boolean
-(4) 문자 : Char
+- 종류
+    
+  - 양수 : short / int / Long (자리수 차이)
+  - 음수 : float / double (자리수 차이)
+  - 참/거짓 : boolean
+  - 문자 : Char
 
 2. Reference Type
 
 - 어떤 언어별, OS별로 뜻이 다르거나 혹은 존재하지 않음으로 설명이 필요하다.
 - 대문자로 시작한다.
 
-(1) 이미 있는 타입 : String / View
-(2) 사용자 정의 타입 : Student / Teacher
+- 종류
+
+  - 이미 있는 타입 : String / View
+  - 사용자 정의 타입 : Student / Teacher
 
 ### 04. 메소드 (Method)
 
@@ -238,21 +242,21 @@ Interface Human{
     public void eat();
 }
 
-// 상속받는 클랫스1
+// 상속받는 클래스1
 class Father implements Human{
     public void eat(){
         "많이 먹는다"
     }
 }
 
-// 상속받는 클랫스2
+// 상속받는 클래스2
 class Mother implements Human{
     public void eat(){
         "적게 먹는다"
     }
 }
 
-// 상속받는 클랫스3
+// 상속받는 클래스3
 class Son implements Human{
     public void eat(){
         "매우 많이 먹는다"
@@ -280,7 +284,7 @@ Interface Father{
 3. `protected` : 해당 패키지 내부와, 상속받은 클래스까지 허용
 4. `public` : 어떤 클래스에서든지 접근이 가능하다.
 
-=> 안드로이드에서 생성하는 일반적인 클래스와 인터페이스는 모두다 같은 패키지에 있기 때문에 default와 protected는 사용성이 낮은 편이다.
+: 안드로이드에서 생성하는 일반적인 클래스와 인터페이스는 모두 다 같은 패키지에 있기 때문에 default와 protected는 사용성이 낮은 편이다.
 
 - static : 어떤 곳에서도 접근이 가능하다.
 
