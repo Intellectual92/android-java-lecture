@@ -147,3 +147,77 @@ Protect void onActivityResult(int requestCode, int resultCode, Intent data){
     }
 }
 ```
+
+### Stack
+
+1. 관리 방법
+
+1) Launch Mode
+
+- 속성
+
+  - standard
+
+    - 기본 모드다.
+    - 다중 인스턴스를 허용한다.
+
+  - singleTop
+
+    - 조건부 다중 인스턴스 허용한다.
+    - 해당 Activity가 최상위 stack에 있을 경우에는, `onNewIntent()메서드를 호출`한다.
+
+  - singleTask
+
+    - 비권장한다. (구글문서 명시)
+    - 오직 한개만 생성될 수 있고, 자신이 새로운 stack을 만들어나가고, 다른 Activity들을 위에 쌓을 수 있다.
+
+  - singleInstance
+
+    - 비권장한다. (구글문서 명시)
+    - 오직 한개만 생성될 수 있고, 자신이 새로운 stack을 만들어나가고, 다른 Activitiy들을 위에 쌓을 수 없다.
+
+1. Intent Flag
+
+- 종류
+
+  - FLAG_ACTIVITY_BROUGHT_TO_FRONT
+
+    - 시스템에 의해 설정되는 값
+    - Activity가 singleTask이고 이미 Activity 스택에 존재하고 있는 상태라고 가정 했을 때, 호출된 Activity가 다시 호출된다.
+
+  - FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET
+
+    - 플래그가 사용된 Activity로부터 최상단의 Activity까지 모두 삭제한다.
+
+  - FLAG_ACTIVITY_CLEAR_TOP
+
+    - 스택에 Activity가 존재하고 있을 경우 새롭게 생성하지 않고, 앞으로 가져온다.
+    - 앞으로 가져올 때 최상단 Activity로부터 호출된 Activity까지 모두 삭제한다.
+
+  - FLAG_ACTIVITY_NO_ANIMATION
+
+    - 액티비티가 전환 될때 애니메이션 효과를 사용하지 않는다.
+
+  - FLAG_ACTIVITY_REORDER_TO_FRONT
+
+    - 호출 하려는 Activity가 스택에 존재하고 있는 경우 스택의 순서를 재정렬한다.
+
+### Thread
+
+작업 흐름을 의미한다.
+
+메인(UI) Thread
+
+- Thread의 시작과 끝이 프로그램의 시작과 끝이 같은 쓰레드를 의미한다.
+- 안드로이드의 경우는 메인 Thread에서만 UI를 구축할 수 있기 때문이다.
+- 메인 Thread는 멈춰서는 안된다. (프로그램이 종료됨)
+
+### Context
+
+- 자신이 어떤 어플리케이션인지 알려주는 ID 역할을 한다.
+- 안드로이드 시스템 서비스에 제공하는 기능을 호출하는 역할을 한다.
+
+- 종류
+
+  - Application Context
+  - Activity Context
